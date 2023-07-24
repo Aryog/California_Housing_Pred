@@ -30,6 +30,11 @@ jobs:
           app_location: "app.py" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
+      - name: Install Flask dependencies
+        run: pip install -r requirements.txt
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
